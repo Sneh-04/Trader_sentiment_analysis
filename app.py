@@ -75,8 +75,9 @@ elif page == "3. Archetype Clustering":
     st.markdown("A K-Means algorithm grouped traders into three profiles based on frequency, win-rate, size, leverage, and Sharpe proxy.")
     st.image("charts/fig10_clustering.png")
     
-    cluster_stats = trader_summary.groupby('cluster')[['trades_per_day', 'avg_size_usd', 'overall_win_rate', 'avg_leverage', 'sharpe_proxy']].mean()
-    cluster_stats['Count'] = trader_summary['cluster'].value_counts()
+    cols = [c for c in ['trades_per_day', 'avg_size_usd', 'overall_win_rate', 'avg_daily_pnl'] 
+        if c in trader_summary.columns]
+cluster_stats = trader_summary.groupby('cluster')[cols].mean().round(2)
     st.dataframe(cluster_stats.style.format({"avg_size_usd": "${:,.0f}", "overall_win_rate": "{:.2%}", "avg_leverage": "{:.2f}x", "sharpe_proxy": "{:.2f}"}))
     
     st.divider()
