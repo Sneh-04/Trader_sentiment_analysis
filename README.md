@@ -175,7 +175,7 @@ streamlit run app.py
 
 ## 🗺️ Roadmap
 
-- [ ] Deploy Streamlit app to Streamlit Cloud (live link)
+- [✅] Deploy Streamlit app to Streamlit Cloud (live link)
 - [ ] Add time-lag analysis — does today's sentiment predict tomorrow's PnL?
 - [ ] Extend to 3-class sentiment (Extreme Fear / Neutral / Extreme Greed)
 - [ ] Add per-coin breakdown — does sentiment affect BTC traders differently from altcoin traders?
